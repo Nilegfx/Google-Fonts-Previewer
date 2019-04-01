@@ -20,7 +20,7 @@ let fontListFragment = document.createDocumentFragment();
 // or develop a simple endpoints that hides our API key, fetch all css, (maybe combine all of them into one file)
 
 //  read more https://developers.google.com/fonts/docs/developer_api
-fetch('./js/fonts.json')
+fetch('/api/fonts')
   .then((r) => r.json())
   .then((fontsObject) => {
     // create visual list for fonts
@@ -29,7 +29,7 @@ fetch('./js/fonts.json')
       let li = document.createElement('li');
       li.classList.add('font');
       li.setAttribute('data-value', fontFamily);
-      li.setAttribute('tabindex', index+100);
+      li.setAttribute('tabindex', 0);
       li.innerText = fontFamily;
       li.style.fontFamily = fontFamily;
 
