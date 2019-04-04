@@ -1,9 +1,10 @@
 const functions = require('firebase-functions');
 const express = require('express');
-const {setupRoutes} = require('./routes');
+const {setupCors} = require('./setups')
+const {createRoutes} = require('./routes');
 
 const app = express();
-
-setupRoutes(app);
+setupCors(app);
+createRoutes(app);
 
 exports.app = functions.https.onRequest(app);
